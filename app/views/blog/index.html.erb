@@ -1,0 +1,30 @@
+<h1>Blog</h1>
+
+<%= link_to "Create New Post",  new_blog_path %>
+<br>
+<br>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Content</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%@blogs.each do |blog|%>
+      <tr>
+        <td><%=blog.title%></td>
+        <td><%=blog.content%></td>
+        <td>
+          <%= link_to "Show", blog_path(blog.id) %>
+          <%= link_to "Edit", edit_blog_path(blog.id) %>
+          <%= link_to "Delete", blog_path(blog.id), method: :delete, data: { confirm: "Estais seguro de vuestra decision?"} %>
+
+        </td>
+      </tr>
+    <%end%>
+  </tbody>
+
+</table>

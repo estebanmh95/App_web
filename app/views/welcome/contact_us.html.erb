@@ -1,0 +1,22 @@
+<h1>Contact Us</h1>
+
+<address>
+  Direccion: Transversal 39 #72-48 => Medellin, Antioquia
+</address>
+
+<div>
+  Telefono de contacto: 573-40-72
+</div>
+
+<%= form_for @welcome, url: ruta_path, method: :post do |f|%>
+  <div class="">
+      <%f.label "Nombre de la casilla"%>
+      <%= f.label :name %>
+      <%= f.text :name %>
+  </div>
+<% end %>
+
+<%= form_tag("/search?q=user", method: "get") do %>
+
+
+<%end%>
